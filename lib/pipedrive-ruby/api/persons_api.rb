@@ -16,7 +16,7 @@ module Pipedrive
   class PersonsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def persons_delete(ids, opts = {})
       persons_delete_with_http_info(ids, opts)
-      return nil
-    end
+      end
 
     # Delete multiple persons in bulk
     # Marks multiple persons as deleted.
@@ -58,8 +57,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +67,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Find persons by name
@@ -82,8 +81,7 @@ module Pipedrive
     # @return [nil]
     def persons_find_get(term, opts = {})
       persons_find_get_with_http_info(term, opts)
-      return nil
-    end
+      end
 
     # Find persons by name
     # Searches all persons by their name.
@@ -121,8 +119,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -131,7 +129,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_find_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all persons
@@ -146,8 +144,7 @@ module Pipedrive
     # @return [nil]
     def persons_get(opts = {})
       persons_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all persons
     # Returns all persons
@@ -183,8 +180,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -193,7 +190,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List activities associated with a person
@@ -207,8 +204,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_activities_get(id, opts = {})
       persons_id_activities_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List activities associated with a person
     # Lists activities associated with a person.
@@ -245,8 +241,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -255,7 +251,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_activities_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List deals associated with a person
@@ -269,8 +265,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_deals_get(id, opts = {})
       persons_id_deals_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List deals associated with a person
     # Lists deals associated with a person.
@@ -307,8 +302,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -317,7 +312,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_deals_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a person
@@ -327,8 +322,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_delete(id, opts = {})
       persons_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a person
     # Marks a person as deleted.
@@ -357,8 +351,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -367,7 +361,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List files attached to a person
@@ -381,8 +375,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_files_get(id, opts = {})
       persons_id_files_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List files attached to a person
     # Lists files associated with a person.
@@ -419,8 +412,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -429,7 +422,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_files_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List updates about a person
@@ -441,8 +434,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_flow_get(id, opts = {})
       persons_id_flow_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List updates about a person
     # Lists updates about a person.
@@ -475,8 +467,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -485,7 +477,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_flow_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a follower from a person
@@ -496,8 +488,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_followers_follower_id_delete(id, follower_id, opts = {})
       persons_id_followers_follower_id_delete_with_http_info(id, follower_id, opts)
-      return nil
-    end
+      end
 
     # Delete a follower from a person
     # Deletes a follower from a person.
@@ -531,8 +522,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -541,7 +532,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_followers_follower_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List followers of a person
@@ -551,8 +542,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_followers_get(id, opts = {})
       persons_id_followers_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List followers of a person
     # Lists the followers of a person.
@@ -581,8 +571,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -591,7 +581,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_followers_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a follower to a person
@@ -602,8 +592,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_followers_post(id, user_id, opts = {})
       persons_id_followers_post_with_http_info(id, user_id, opts)
-      return nil
-    end
+      end
 
     # Add a follower to a person
     # Adds a follower to a person.
@@ -638,8 +627,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -648,7 +637,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_followers_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get details of a person
@@ -658,8 +647,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_get(id, opts = {})
       persons_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get details of a person
     # Returns details of a person. Note that this also returns some additional fields which are not present when asking for all persons. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the &#39;key&#39; value of personFields.
@@ -688,8 +676,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -698,7 +686,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List mail messages associated with a person
@@ -710,8 +698,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_mail_messages_get(id, opts = {})
       persons_id_mail_messages_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List mail messages associated with a person
     # Lists mail messages associated with a person.
@@ -744,8 +731,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -754,7 +741,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_mail_messages_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Merge two persons
@@ -765,8 +752,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_merge_put(id, merge_with_id, opts = {})
       persons_id_merge_put_with_http_info(id, merge_with_id, opts)
-      return nil
-    end
+      end
 
     # Merge two persons
     # Merges a person with another person.
@@ -801,8 +787,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -811,7 +797,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_merge_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List permitted users
@@ -822,8 +808,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_permitted_users_get(id, opts = {})
       persons_id_permitted_users_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List permitted users
     # List users permitted to access a person
@@ -854,8 +839,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -864,7 +849,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_permitted_users_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete person picture
@@ -874,8 +859,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_picture_delete(id, opts = {})
       persons_id_picture_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete person picture
     # Delete person picture
@@ -904,8 +888,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -914,7 +898,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_picture_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add person picture
@@ -929,8 +913,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_picture_post(id, file, opts = {})
       persons_id_picture_post_with_http_info(id, file, opts)
-      return nil
-    end
+      end
 
     # Add person picture
     # Add a picture to a person. If a picture is already set, the old picture will be replaced. Added image (or the cropping parameters supplied with the request) should have an equal width and height and should be at least 128 pixels. GIF, JPG and PNG are accepted. All added images will be resized to 128 and 512 pixel wide squares.
@@ -973,8 +956,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -983,7 +966,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_picture_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List products associated with a person
@@ -995,8 +978,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_products_get(id, opts = {})
       persons_id_products_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List products associated with a person
     # Lists products associated with a person.
@@ -1029,8 +1011,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1039,7 +1021,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_products_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update a person
@@ -1055,8 +1037,7 @@ module Pipedrive
     # @return [nil]
     def persons_id_put(id, opts = {})
       persons_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Update a person
     # Updates the properties of a person.
@@ -1097,8 +1078,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1107,7 +1088,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a person
@@ -1123,8 +1104,7 @@ module Pipedrive
     # @return [nil]
     def persons_post(name, opts = {})
       persons_post_with_http_info(name, opts)
-      return nil
-    end
+      end
 
     # Add a person
     # Adds a new person. Note that you can supply additional custom fields along with the request that are not described here. These custom fields are different for each Pipedrive account and can be recognized by long hashes as keys. To determine which custom fields exists, fetch the personFields and look for &#39;key&#39; values.
@@ -1166,8 +1146,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1176,7 +1156,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PersonsApi#persons_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

@@ -18,41 +18,6 @@ require 'pipedrive-ruby/configuration'
 
 # Models
 
-# APIs
-require 'pipedrive-ruby/api/activities_api'
-require 'pipedrive-ruby/api/activity_fields_api'
-require 'pipedrive-ruby/api/activity_types_api'
-require 'pipedrive-ruby/api/authorizations_api'
-require 'pipedrive-ruby/api/currencies_api'
-require 'pipedrive-ruby/api/deal_fields_api'
-require 'pipedrive-ruby/api/deals_api'
-require 'pipedrive-ruby/api/files_api'
-require 'pipedrive-ruby/api/filters_api'
-require 'pipedrive-ruby/api/global_messages_api'
-require 'pipedrive-ruby/api/goals_api'
-require 'pipedrive-ruby/api/mail_messages_api'
-require 'pipedrive-ruby/api/mail_threads_api'
-require 'pipedrive-ruby/api/note_fields_api'
-require 'pipedrive-ruby/api/notes_api'
-require 'pipedrive-ruby/api/organization_fields_api'
-require 'pipedrive-ruby/api/organization_relationships_api'
-require 'pipedrive-ruby/api/organizations_api'
-require 'pipedrive-ruby/api/permission_sets_api'
-require 'pipedrive-ruby/api/person_fields_api'
-require 'pipedrive-ruby/api/persons_api'
-require 'pipedrive-ruby/api/pipelines_api'
-require 'pipedrive-ruby/api/product_fields_api'
-require 'pipedrive-ruby/api/products_api'
-require 'pipedrive-ruby/api/push_notifications_api'
-require 'pipedrive-ruby/api/recents_api'
-require 'pipedrive-ruby/api/roles_api'
-require 'pipedrive-ruby/api/search_results_api'
-require 'pipedrive-ruby/api/stages_api'
-require 'pipedrive-ruby/api/user_connections_api'
-require 'pipedrive-ruby/api/user_settings_api'
-require 'pipedrive-ruby/api/users_api'
-require 'pipedrive-ruby/api/webhooks_api'
-
 module Pipedrive
   class << self
     # Customize default settings for the SDK using block.

@@ -16,7 +16,7 @@ module Pipedrive
   class PermissionSetsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -26,8 +26,7 @@ module Pipedrive
     # @return [nil]
     def permission_sets_get(opts = {})
       permission_sets_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all permission sets
     # 
@@ -51,8 +50,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -61,7 +60,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PermissionSetsApi#permission_sets_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a permission set assignment
@@ -72,8 +71,7 @@ module Pipedrive
     # @return [nil]
     def permission_sets_id_assignments_delete(id, user_id, opts = {})
       permission_sets_id_assignments_delete_with_http_info(id, user_id, opts)
-      return nil
-    end
+      end
 
     # Delete a permission set assignment
     # Delete assignment from a permission set
@@ -108,8 +106,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -118,7 +116,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PermissionSetsApi#permission_sets_id_assignments_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List permission set assignments
@@ -130,8 +128,7 @@ module Pipedrive
     # @return [nil]
     def permission_sets_id_assignments_get(id, opts = {})
       permission_sets_id_assignments_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List permission set assignments
     # List assignments for a permission set
@@ -164,8 +161,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -174,7 +171,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PermissionSetsApi#permission_sets_id_assignments_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add permission set assignment
@@ -185,8 +182,7 @@ module Pipedrive
     # @return [nil]
     def permission_sets_id_assignments_post(id, user_id, opts = {})
       permission_sets_id_assignments_post_with_http_info(id, user_id, opts)
-      return nil
-    end
+      end
 
     # Add permission set assignment
     # Add assignment for a permission set
@@ -221,8 +217,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -231,7 +227,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PermissionSetsApi#permission_sets_id_assignments_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one permission set
@@ -241,8 +237,7 @@ module Pipedrive
     # @return [nil]
     def permission_sets_id_get(id, opts = {})
       permission_sets_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one permission set
     # 
@@ -271,8 +266,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -281,7 +276,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PermissionSetsApi#permission_sets_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update permission set details
@@ -292,8 +287,7 @@ module Pipedrive
     # @return [nil]
     def permission_sets_id_put(id, contents, opts = {})
       permission_sets_id_put_with_http_info(id, contents, opts)
-      return nil
-    end
+      end
 
     # Update permission set details
     # 
@@ -327,8 +321,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(contents)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -337,7 +331,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PermissionSetsApi#permission_sets_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

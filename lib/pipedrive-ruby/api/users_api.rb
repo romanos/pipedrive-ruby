@@ -16,7 +16,7 @@ module Pipedrive
   class UsersApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -28,8 +28,7 @@ module Pipedrive
     # @return [nil]
     def users_find_get(term, opts = {})
       users_find_get_with_http_info(term, opts)
-      return nil
-    end
+      end
 
     # Find users by name
     # Finds users by their name.
@@ -61,8 +60,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -71,7 +70,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_find_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all users
@@ -80,8 +79,7 @@ module Pipedrive
     # @return [nil]
     def users_get(opts = {})
       users_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all users
     # Returns data about all users within the company
@@ -105,8 +103,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -115,7 +113,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List and filter activities assigned to a specific user
@@ -130,8 +128,7 @@ module Pipedrive
     # @return [nil]
     def users_id_activities_get(id, opts = {})
       users_id_activities_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List and filter activities assigned to a specific user
     # Lists activities assigned to a specific user, with optional due_date and type filtering.
@@ -170,8 +167,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -180,7 +177,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_activities_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List blacklisted email addresses of a user
@@ -190,8 +187,7 @@ module Pipedrive
     # @return [nil]
     def users_id_blacklisted_emails_get(id, opts = {})
       users_id_blacklisted_emails_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List blacklisted email addresses of a user
     # Lists blacklisted email addresses of a specific user. Blacklisted emails are such that will not get synced in to Pipedrive when using the built-in Mailbox.
@@ -220,8 +216,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -230,7 +226,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_blacklisted_emails_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add blacklisted email address for a user
@@ -241,8 +237,7 @@ module Pipedrive
     # @return [nil]
     def users_id_blacklisted_emails_post(id, address, opts = {})
       users_id_blacklisted_emails_post_with_http_info(id, address, opts)
-      return nil
-    end
+      end
 
     # Add blacklisted email address for a user
     # Add blacklisted email address for a specific user.
@@ -277,8 +272,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -287,7 +282,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_blacklisted_emails_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List followers of a user
@@ -297,8 +292,7 @@ module Pipedrive
     # @return [nil]
     def users_id_followers_get(id, opts = {})
       users_id_followers_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List followers of a user
     # Lists followers of a specific user.
@@ -327,8 +321,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -337,7 +331,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_followers_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one user
@@ -347,8 +341,7 @@ module Pipedrive
     # @return [nil]
     def users_id_get(id, opts = {})
       users_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one user
     # Returns data about a specific user within the company
@@ -377,8 +370,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -387,7 +380,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a permission set assignment
@@ -398,8 +391,7 @@ module Pipedrive
     # @return [nil]
     def users_id_permission_set_assignments_delete(id, permission_set_id, opts = {})
       users_id_permission_set_assignments_delete_with_http_info(id, permission_set_id, opts)
-      return nil
-    end
+      end
 
     # Delete a permission set assignment
     # Delete a permission set assignment for a user
@@ -434,8 +426,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -444,7 +436,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_permission_set_assignments_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List permission set assignments
@@ -456,8 +448,7 @@ module Pipedrive
     # @return [nil]
     def users_id_permission_set_assignments_get(id, opts = {})
       users_id_permission_set_assignments_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List permission set assignments
     # List permission set assignments for a user
@@ -490,8 +481,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -500,7 +491,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_permission_set_assignments_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add permission set assignment
@@ -511,8 +502,7 @@ module Pipedrive
     # @return [nil]
     def users_id_permission_set_assignments_post(id, permission_set_id, opts = {})
       users_id_permission_set_assignments_post_with_http_info(id, permission_set_id, opts)
-      return nil
-    end
+      end
 
     # Add permission set assignment
     # Add permission set assignment for a user
@@ -547,8 +537,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -557,7 +547,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_permission_set_assignments_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List user permissions
@@ -567,8 +557,7 @@ module Pipedrive
     # @return [nil]
     def users_id_permissions_get(id, opts = {})
       users_id_permissions_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List user permissions
     # List aggregated permissions over all assigned permission sets for a user
@@ -597,8 +586,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -607,7 +596,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_permissions_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update user details
@@ -618,8 +607,7 @@ module Pipedrive
     # @return [nil]
     def users_id_put(id, active_flag, opts = {})
       users_id_put_with_http_info(id, active_flag, opts)
-      return nil
-    end
+      end
 
     # Update user details
     # Updates the properties of a user. Currently, only active_flag can be updated.
@@ -654,8 +642,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -664,7 +652,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a role assignment
@@ -675,8 +663,7 @@ module Pipedrive
     # @return [nil]
     def users_id_role_assignments_delete(id, role_id, opts = {})
       users_id_role_assignments_delete_with_http_info(id, role_id, opts)
-      return nil
-    end
+      end
 
     # Delete a role assignment
     # Delete a role assignment for a user
@@ -711,8 +698,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -721,7 +708,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_role_assignments_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List role assignments
@@ -733,8 +720,7 @@ module Pipedrive
     # @return [nil]
     def users_id_role_assignments_get(id, opts = {})
       users_id_role_assignments_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List role assignments
     # List role assignments for a user
@@ -767,8 +753,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -777,7 +763,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_role_assignments_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add role assignment
@@ -788,8 +774,7 @@ module Pipedrive
     # @return [nil]
     def users_id_role_assignments_post(id, role_id, opts = {})
       users_id_role_assignments_post_with_http_info(id, role_id, opts)
-      return nil
-    end
+      end
 
     # Add role assignment
     # Add role assignment for a user
@@ -824,8 +809,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -834,7 +819,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_role_assignments_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List user role settings
@@ -844,8 +829,7 @@ module Pipedrive
     # @return [nil]
     def users_id_role_settings_get(id, opts = {})
       users_id_role_settings_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List user role settings
     # List settings of user&#39;s assigned role
@@ -874,8 +858,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -884,7 +868,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_id_role_settings_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a new user
@@ -896,8 +880,7 @@ module Pipedrive
     # @return [nil]
     def users_post(name, email, active_flag, opts = {})
       users_post_with_http_info(name, email, active_flag, opts)
-      return nil
-    end
+      end
 
     # Add a new user
     # Adds a new user to the company, returns the ID upon success.
@@ -939,8 +922,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -949,7 +932,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#users_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

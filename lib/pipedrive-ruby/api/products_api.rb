@@ -16,7 +16,7 @@ module Pipedrive
   class ProductsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -30,8 +30,7 @@ module Pipedrive
     # @return [nil]
     def products_find_get(term, opts = {})
       products_find_get_with_http_info(term, opts)
-      return nil
-    end
+      end
 
     # Find products by name
     # Returns data about the products that were found. If currency was set in request, prices in that currency are served back.
@@ -67,8 +66,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -77,7 +76,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_find_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all products
@@ -91,8 +90,7 @@ module Pipedrive
     # @return [nil]
     def products_get(opts = {})
       products_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all products
     # Returns data about all products
@@ -126,8 +124,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -136,7 +134,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get deals where a product is attached to
@@ -149,8 +147,7 @@ module Pipedrive
     # @return [nil]
     def products_id_deals_get(id, opts = {})
       products_id_deals_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get deals where a product is attached to
     # Returns data about a deals that have a product attached to.
@@ -185,8 +182,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -195,7 +192,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_deals_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a product
@@ -205,8 +202,7 @@ module Pipedrive
     # @return [nil]
     def products_id_delete(id, opts = {})
       products_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a product
     # Marks a product as deleted.
@@ -235,8 +231,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -245,7 +241,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List files attached to a product
@@ -259,8 +255,7 @@ module Pipedrive
     # @return [nil]
     def products_id_files_get(id, opts = {})
       products_id_files_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List files attached to a product
     # Lists files associated with a product.
@@ -297,8 +292,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -307,7 +302,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_files_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a follower from a product
@@ -318,8 +313,7 @@ module Pipedrive
     # @return [nil]
     def products_id_followers_follower_id_delete(id, follower_id, opts = {})
       products_id_followers_follower_id_delete_with_http_info(id, follower_id, opts)
-      return nil
-    end
+      end
 
     # Delete a follower from a product
     # Deletes a follower from a product.
@@ -353,8 +347,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -363,7 +357,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_followers_follower_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List followers of a product
@@ -373,8 +367,7 @@ module Pipedrive
     # @return [nil]
     def products_id_followers_get(id, opts = {})
       products_id_followers_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List followers of a product
     # Lists the followers of a product.
@@ -403,8 +396,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -413,7 +406,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_followers_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a follower to a product
@@ -424,8 +417,7 @@ module Pipedrive
     # @return [nil]
     def products_id_followers_post(id, user_id, opts = {})
       products_id_followers_post_with_http_info(id, user_id, opts)
-      return nil
-    end
+      end
 
     # Add a follower to a product
     # Adds a follower to a product.
@@ -460,8 +452,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -470,7 +462,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_followers_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one product
@@ -480,8 +472,7 @@ module Pipedrive
     # @return [nil]
     def products_id_get(id, opts = {})
       products_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one product
     # Returns data about a specific products
@@ -510,8 +501,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -520,7 +511,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List permitted users
@@ -531,8 +522,7 @@ module Pipedrive
     # @return [nil]
     def products_id_permitted_users_get(id, opts = {})
       products_id_permitted_users_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List permitted users
     # List users permitted to access a product
@@ -563,8 +553,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -573,7 +563,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_permitted_users_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update a product
@@ -591,8 +581,7 @@ module Pipedrive
     # @return [nil]
     def products_id_put(id, opts = {})
       products_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Update a product
     # Updates product data.
@@ -637,8 +626,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -647,7 +636,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a product
@@ -664,8 +653,7 @@ module Pipedrive
     # @return [nil]
     def products_post(name, opts = {})
       products_post_with_http_info(name, opts)
-      return nil
-    end
+      end
 
     # Add a product
     # Adds a new product to the products inventory.
@@ -708,8 +696,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'prices'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -718,7 +706,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductsApi#products_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

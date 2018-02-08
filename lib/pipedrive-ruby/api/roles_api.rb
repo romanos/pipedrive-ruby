@@ -16,7 +16,7 @@ module Pipedrive
   class RolesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -28,8 +28,7 @@ module Pipedrive
     # @return [nil]
     def roles_get(opts = {})
       roles_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all roles
     # 
@@ -57,8 +56,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -67,7 +66,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a role assignment
@@ -78,8 +77,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_assignments_delete(id, user_id, opts = {})
       roles_id_assignments_delete_with_http_info(id, user_id, opts)
-      return nil
-    end
+      end
 
     # Delete a role assignment
     # Delete assignment from a role
@@ -114,8 +112,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -124,7 +122,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_assignments_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List role assignments
@@ -136,8 +134,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_assignments_get(id, opts = {})
       roles_id_assignments_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List role assignments
     # List assignments for a role
@@ -170,8 +167,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -180,7 +177,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_assignments_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add role assignment
@@ -191,8 +188,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_assignments_post(id, user_id, opts = {})
       roles_id_assignments_post_with_http_info(id, user_id, opts)
-      return nil
-    end
+      end
 
     # Add role assignment
     # Add assignment for a role
@@ -227,8 +223,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -237,7 +233,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_assignments_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a role
@@ -247,8 +243,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_delete(id, opts = {})
       roles_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a role
     # 
@@ -277,8 +272,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -287,7 +282,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one role
@@ -297,8 +292,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_get(id, opts = {})
       roles_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one role
     # 
@@ -327,8 +321,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -337,7 +331,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update role details
@@ -349,8 +343,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_put(id, opts = {})
       roles_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Update role details
     # 
@@ -383,8 +376,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -393,7 +386,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List role sub-roles
@@ -405,8 +398,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_roles_get(id, opts = {})
       roles_id_roles_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List role sub-roles
     # 
@@ -439,8 +431,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -449,7 +441,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_roles_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List role settings
@@ -459,8 +451,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_settings_get(id, opts = {})
       roles_id_settings_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List role settings
     # 
@@ -489,8 +480,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -499,7 +490,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_settings_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add or update role setting
@@ -511,8 +502,7 @@ module Pipedrive
     # @return [nil]
     def roles_id_settings_post(id, setting_key, value, opts = {})
       roles_id_settings_post_with_http_info(id, setting_key, value, opts)
-      return nil
-    end
+      end
 
     # Add or update role setting
     # 
@@ -553,8 +543,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -563,7 +553,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_id_settings_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a role
@@ -574,8 +564,7 @@ module Pipedrive
     # @return [nil]
     def roles_post(name, opts = {})
       roles_post_with_http_info(name, opts)
-      return nil
-    end
+      end
 
     # Add a role
     # 
@@ -607,8 +596,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -617,7 +606,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RolesApi#roles_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

@@ -16,7 +16,7 @@ module Pipedrive
   class OrganizationRelationshipsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def organization_relationships_get(org_id, opts = {})
       organization_relationships_get_with_http_info(org_id, opts)
-      return nil
-    end
+      end
 
     # Get all relationships for organization
     # Gets all of the relationships for a supplied organization id.
@@ -58,8 +57,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +67,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationRelationshipsApi#organization_relationships_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete an organization relationship
@@ -78,8 +77,7 @@ module Pipedrive
     # @return [nil]
     def organization_relationships_id_delete(id, opts = {})
       organization_relationships_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete an organization relationship
     # Deletes an organization relationship and returns the deleted id.
@@ -108,8 +106,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -118,7 +116,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationRelationshipsApi#organization_relationships_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one organization relationship
@@ -129,8 +127,7 @@ module Pipedrive
     # @return [nil]
     def organization_relationships_id_get(id, opts = {})
       organization_relationships_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one organization relationship
     # Finds and returns an organization relationship from its ID.
@@ -161,8 +158,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -171,7 +168,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationRelationshipsApi#organization_relationships_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update an organization relationship
@@ -185,8 +182,7 @@ module Pipedrive
     # @return [nil]
     def organization_relationships_id_put(id, opts = {})
       organization_relationships_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Update an organization relationship
     # Updates and returns an organization relationship.
@@ -223,8 +219,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -233,7 +229,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationRelationshipsApi#organization_relationships_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Create an organization relationship
@@ -246,8 +242,7 @@ module Pipedrive
     # @return [nil]
     def organization_relationships_post(type, rel_owner_org_id, rel_linked_org_id, opts = {})
       organization_relationships_post_with_http_info(type, rel_owner_org_id, rel_linked_org_id, opts)
-      return nil
-    end
+      end
 
     # Create an organization relationship
     # Creates and returns an organization relationship.
@@ -291,8 +286,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -301,7 +296,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationRelationshipsApi#organization_relationships_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

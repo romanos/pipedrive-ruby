@@ -16,7 +16,7 @@ module Pipedrive
   class RecentsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -30,8 +30,7 @@ module Pipedrive
     # @return [nil]
     def recents_get(since_timestamp, opts = {})
       recents_get_with_http_info(since_timestamp, opts)
-      return nil
-    end
+      end
 
     # Get recents
     # Returns data about all recent changes occured after given timestamp.
@@ -67,8 +66,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -77,7 +76,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RecentsApi#recents_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

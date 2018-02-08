@@ -16,7 +16,7 @@ module Pipedrive
   class CurrenciesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def currencies_get(opts = {})
       currencies_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all supported currencies
     # Returns all supported currencies in given account which should be used when saving monetary values with other objects. The &#39;code&#39; parameter of the returning objects is the currency code according to ISO 4217 for all non-custom currencies.
@@ -54,8 +53,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -64,7 +63,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CurrenciesApi#currencies_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

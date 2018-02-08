@@ -16,7 +16,7 @@ module Pipedrive
   class GoalsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -28,8 +28,7 @@ module Pipedrive
     # @return [nil]
     def goals_get(opts = {})
       goals_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all goals
     # Returns data about all goals.
@@ -57,8 +56,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -67,7 +66,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GoalsApi#goals_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete existing goal
@@ -77,8 +76,7 @@ module Pipedrive
     # @return [nil]
     def goals_id_delete(id, opts = {})
       goals_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete existing goal
     # Marks goal as deleted.
@@ -107,8 +105,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -117,7 +115,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GoalsApi#goals_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get details of a goal
@@ -127,8 +125,7 @@ module Pipedrive
     # @return [nil]
     def goals_id_get(id, opts = {})
       goals_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get details of a goal
     # Returns data about a specific goal.
@@ -157,8 +154,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -167,7 +164,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GoalsApi#goals_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update goal details
@@ -185,8 +182,7 @@ module Pipedrive
     # @return [nil]
     def goals_id_put(id, goal_type, expected_type, period, expected, opts = {})
       goals_id_put_with_http_info(id, goal_type, expected_type, period, expected, opts)
-      return nil
-    end
+      end
 
     # Update goal details
     # Updates the properties of a goal.
@@ -247,8 +243,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -257,7 +253,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GoalsApi#goals_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get results of one goal
@@ -269,8 +265,7 @@ module Pipedrive
     # @return [nil]
     def goals_id_results_get(id, opts = {})
       goals_id_results_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get results of one goal
     # Lists results of a specific goal.
@@ -303,8 +298,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -313,7 +308,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GoalsApi#goals_id_results_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a new goal
@@ -330,8 +325,7 @@ module Pipedrive
     # @return [nil]
     def goals_post(goal_type, expected_type, period, expected, opts = {})
       goals_post_with_http_info(goal_type, expected_type, period, expected, opts)
-      return nil
-    end
+      end
 
     # Add a new goal
     # Adds a new goal, returns the ID upon success.
@@ -387,8 +381,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -397,7 +391,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: GoalsApi#goals_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

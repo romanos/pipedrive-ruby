@@ -16,7 +16,7 @@ module Pipedrive
   class ActivitiesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def activities_delete(ids, opts = {})
       activities_delete_with_http_info(ids, opts)
-      return nil
-    end
+      end
 
     # Delete multiple activities in bulk
     # Marks multiple activities as deleted.
@@ -58,8 +57,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +67,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ActivitiesApi#activities_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all activities assigned to a particular user
@@ -85,8 +84,7 @@ module Pipedrive
     # @return [nil]
     def activities_get(opts = {})
       activities_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all activities assigned to a particular user
     # Returns all activities assigned to a particular user
@@ -126,8 +124,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -136,7 +134,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ActivitiesApi#activities_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete an activity
@@ -146,8 +144,7 @@ module Pipedrive
     # @return [nil]
     def activities_id_delete(id, opts = {})
       activities_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete an activity
     # Deletes an activity
@@ -176,8 +173,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -186,7 +183,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ActivitiesApi#activities_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get details of an activity
@@ -196,8 +193,7 @@ module Pipedrive
     # @return [nil]
     def activities_id_get(id, opts = {})
       activities_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get details of an activity
     # Returns details of a specific activity.
@@ -226,8 +222,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -236,7 +232,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ActivitiesApi#activities_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Edit an activity
@@ -258,8 +254,7 @@ module Pipedrive
     # @return [nil]
     def activities_id_put(id, opts = {})
       activities_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Edit an activity
     # Modifies an activity. Includes more_activities_scheduled_in_context property in response&#39;s additional_data which indicates whether there are more undone activities scheduled with the same deal, person or organization (depending on the supplied data).
@@ -311,8 +306,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'participants'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -321,7 +316,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ActivitiesApi#activities_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add an activity
@@ -342,8 +337,7 @@ module Pipedrive
     # @return [nil]
     def activities_post(subject, type, opts = {})
       activities_post_with_http_info(subject, type, opts)
-      return nil
-    end
+      end
 
     # Add an activity
     # Adds a new activity. Includes more_activities_scheduled_in_context property in response&#39;s additional_data which indicates whether there are more undone activities scheduled with the same deal, person or organization (depending on the supplied data).
@@ -398,8 +392,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'participants'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -408,7 +402,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ActivitiesApi#activities_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

@@ -16,7 +16,7 @@ module Pipedrive
   class FilesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -30,8 +30,7 @@ module Pipedrive
     # @return [nil]
     def files_get(opts = {})
       files_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all files
     # Returns data about all files.
@@ -63,8 +62,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -73,7 +72,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a file
@@ -83,8 +82,7 @@ module Pipedrive
     # @return [nil]
     def files_id_delete(id, opts = {})
       files_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a file
     # Marks a file as deleted.
@@ -113,8 +111,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -123,7 +121,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Download one file
@@ -133,8 +131,7 @@ module Pipedrive
     # @return [nil]
     def files_id_download_get(id, opts = {})
       files_id_download_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Download one file
     # Initializes a file download.
@@ -163,8 +160,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -173,7 +170,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_id_download_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one file
@@ -183,8 +180,7 @@ module Pipedrive
     # @return [nil]
     def files_id_get(id, opts = {})
       files_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one file
     # Returns data about a specific file.
@@ -213,8 +209,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -223,7 +219,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update file details
@@ -235,8 +231,7 @@ module Pipedrive
     # @return [nil]
     def files_id_put(id, opts = {})
       files_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Update file details
     # Updates the properties of a file.
@@ -269,8 +264,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -279,7 +274,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add file
@@ -295,8 +290,7 @@ module Pipedrive
     # @return [nil]
     def files_post(file, opts = {})
       files_post_with_http_info(file, opts)
-      return nil
-    end
+      end
 
     # Add file
     # Lets you upload a file, and associate it with a Deal, a Person, an Organization, an Activity or a Product.
@@ -338,8 +332,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -348,7 +342,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Link a remote file to an item
@@ -361,8 +355,7 @@ module Pipedrive
     # @return [nil]
     def files_remote_link_post(item_type, item_id, remote_id, remote_location, opts = {})
       files_remote_link_post_with_http_info(item_type, item_id, remote_id, remote_location, opts)
-      return nil
-    end
+      end
 
     # Link a remote file to an item
     # Links an existing remote file (googledrive, etc) to the item you supply.
@@ -410,8 +403,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -420,7 +413,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_remote_link_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Create a remote file and link it to an item
@@ -434,8 +427,7 @@ module Pipedrive
     # @return [nil]
     def files_remote_post(file_type, title, item_type, item_id, remote_location, opts = {})
       files_remote_post_with_http_info(file_type, title, item_type, item_id, remote_location, opts)
-      return nil
-    end
+      end
 
     # Create a remote file and link it to an item
     # Creates a new empty file in the remote location (googledrive, etc) that will be linked to the item you supply.
@@ -489,8 +481,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -499,7 +491,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FilesApi#files_remote_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

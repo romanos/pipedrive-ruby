@@ -16,7 +16,7 @@ module Pipedrive
   class FiltersApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def filters_delete(ids, opts = {})
       filters_delete_with_http_info(ids, opts)
-      return nil
-    end
+      end
 
     # Delete multiple filters in bulk
     # Marks multiple filters as deleted.
@@ -58,8 +57,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +67,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FiltersApi#filters_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all filters
@@ -78,8 +77,7 @@ module Pipedrive
     # @return [nil]
     def filters_get(opts = {})
       filters_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all filters
     # Returns data about all filters
@@ -105,8 +103,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -115,7 +113,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FiltersApi#filters_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a filter
@@ -125,8 +123,7 @@ module Pipedrive
     # @return [nil]
     def filters_id_delete(id, opts = {})
       filters_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a filter
     # Marks a filter as deleted.
@@ -155,8 +152,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -165,7 +162,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FiltersApi#filters_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one filter
@@ -175,8 +172,7 @@ module Pipedrive
     # @return [nil]
     def filters_id_get(id, opts = {})
       filters_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one filter
     # Returns data about a specific filter. Note that this also returns the condition lines of the filter.
@@ -205,8 +201,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -215,7 +211,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FiltersApi#filters_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update filter
@@ -227,8 +223,7 @@ module Pipedrive
     # @return [nil]
     def filters_id_put(id, conditions, opts = {})
       filters_id_put_with_http_info(id, conditions, opts)
-      return nil
-    end
+      end
 
     # Update filter
     # Updates existing filter.
@@ -264,8 +259,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(conditions)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -274,7 +269,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FiltersApi#filters_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a new filter
@@ -286,8 +281,7 @@ module Pipedrive
     # @return [nil]
     def filters_post(name, conditions, type, opts = {})
       filters_post_with_http_info(name, conditions, type, opts)
-      return nil
-    end
+      end
 
     # Add a new filter
     # Adds a new filter, returns the ID upon success. Note that in the conditions json object only one first-level condition group is supported, and it must be glued with &#39;AND&#39;, and only two second level condition groups are supported of which one must be glued with &#39;AND&#39; and the second with &#39;OR&#39;. Other combinations do not work (yet) but the syntax supports introducing them in future.
@@ -328,8 +322,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(conditions)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -338,7 +332,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FiltersApi#filters_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

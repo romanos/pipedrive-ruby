@@ -16,7 +16,7 @@ module Pipedrive
   class ProductFieldsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def product_fields_delete(ids, opts = {})
       product_fields_delete_with_http_info(ids, opts)
-      return nil
-    end
+      end
 
     # Delete multiple product fields in bulk
     # Marks multiple fields as deleted.
@@ -58,8 +57,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +67,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductFieldsApi#product_fields_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all product fields
@@ -77,8 +76,7 @@ module Pipedrive
     # @return [nil]
     def product_fields_get(opts = {})
       product_fields_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all product fields
     # Returns data about all product fields
@@ -102,8 +100,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -112,7 +110,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductFieldsApi#product_fields_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a product field
@@ -122,8 +120,7 @@ module Pipedrive
     # @return [nil]
     def product_fields_id_delete(id, opts = {})
       product_fields_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a product field
     # Marks a field as deleted.
@@ -152,8 +149,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -162,7 +159,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductFieldsApi#product_fields_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one product field
@@ -172,8 +169,7 @@ module Pipedrive
     # @return [nil]
     def product_fields_id_get(id, opts = {})
       product_fields_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one product field
     # Returns data about a specific product field.
@@ -202,8 +198,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -212,7 +208,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductFieldsApi#product_fields_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update a product field
@@ -224,8 +220,7 @@ module Pipedrive
     # @return [nil]
     def product_fields_id_put(id, name, opts = {})
       product_fields_id_put_with_http_info(id, name, opts)
-      return nil
-    end
+      end
 
     # Update a product field
     # Updates a product field
@@ -261,8 +256,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'options'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -271,7 +266,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductFieldsApi#product_fields_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a new product field
@@ -283,8 +278,7 @@ module Pipedrive
     # @return [nil]
     def product_fields_post(name, field_type, opts = {})
       product_fields_post_with_http_info(name, field_type, opts)
-      return nil
-    end
+      end
 
     # Add a new product field
     # Adds a new product field
@@ -321,8 +315,8 @@ module Pipedrive
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'options'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -331,7 +325,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductFieldsApi#product_fields_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

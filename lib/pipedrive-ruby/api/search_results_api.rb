@@ -16,7 +16,7 @@ module Pipedrive
   class SearchResultsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -34,8 +34,7 @@ module Pipedrive
     # @return [nil]
     def search_results_field_get(term, field_type, field_key, opts = {})
       search_results_field_get_with_http_info(term, field_type, field_key, opts)
-      return nil
-    end
+      end
 
     # Perform a search using a specific field value
     # Performs a search from a specific field&#39;s values. Results can be either the distinct values of the field (useful for searching autocomplete field values), or actual items IDs (deals, persons, organizations or products). Works only with the following field types: varchar, varchar_auto, double, address, text, phone, date.
@@ -87,8 +86,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -97,7 +96,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SearchResultsApi#search_results_field_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Perform a search
@@ -111,8 +110,7 @@ module Pipedrive
     # @return [nil]
     def search_results_get(term, opts = {})
       search_results_get_with_http_info(term, opts)
-      return nil
-    end
+      end
 
     # Perform a search
     # Performs a search across the account and returns SearchResults.
@@ -150,8 +148,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -160,7 +158,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SearchResultsApi#search_results_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

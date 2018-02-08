@@ -16,7 +16,7 @@ module Pipedrive
   class StagesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def stages_delete(ids, opts = {})
       stages_delete_with_http_info(ids, opts)
-      return nil
-    end
+      end
 
     # Delete multiple stages in bulk
     # Marks multiple stages as deleted.
@@ -58,8 +57,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +67,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: StagesApi#stages_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all stages
@@ -78,8 +77,7 @@ module Pipedrive
     # @return [nil]
     def stages_get(opts = {})
       stages_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all stages
     # Returns data about all stages
@@ -105,8 +103,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -115,7 +113,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: StagesApi#stages_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get deals in a stage
@@ -130,8 +128,7 @@ module Pipedrive
     # @return [nil]
     def stages_id_deals_get(id, opts = {})
       stages_id_deals_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get deals in a stage
     # Lists deals in a specific stage
@@ -170,8 +167,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -180,7 +177,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: StagesApi#stages_id_deals_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a stage
@@ -190,8 +187,7 @@ module Pipedrive
     # @return [nil]
     def stages_id_delete(id, opts = {})
       stages_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a stage
     # Marks a stage as deleted.
@@ -220,8 +216,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -230,7 +226,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: StagesApi#stages_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one stage
@@ -240,8 +236,7 @@ module Pipedrive
     # @return [nil]
     def stages_id_get(id, opts = {})
       stages_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one stage
     # Returns data about a specific stage
@@ -270,8 +265,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -280,7 +275,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: StagesApi#stages_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update stage details
@@ -296,8 +291,7 @@ module Pipedrive
     # @return [nil]
     def stages_id_put(id, opts = {})
       stages_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Update stage details
     # Updates the properties of a stage.
@@ -338,8 +332,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -348,7 +342,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: StagesApi#stages_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a new stage
@@ -362,8 +356,7 @@ module Pipedrive
     # @return [nil]
     def stages_post(name, pipeline_id, opts = {})
       stages_post_with_http_info(name, pipeline_id, opts)
-      return nil
-    end
+      end
 
     # Add a new stage
     # Adds a new stage, returns the ID upon success.
@@ -405,8 +398,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -415,7 +408,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: StagesApi#stages_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

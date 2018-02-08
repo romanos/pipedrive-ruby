@@ -16,7 +16,7 @@ module Pipedrive
   class WebhooksApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -26,8 +26,7 @@ module Pipedrive
     # @return [nil]
     def webhooks_get(opts = {})
       webhooks_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all webhooks
     # Returns data about all webhooks of a company.
@@ -51,8 +50,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -61,7 +60,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WebhooksApi#webhooks_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete existing webhook
@@ -71,8 +70,7 @@ module Pipedrive
     # @return [nil]
     def webhooks_id_delete(id, opts = {})
       webhooks_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete existing webhook
     # Deletes the specified webhook.
@@ -101,8 +99,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -111,7 +109,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WebhooksApi#webhooks_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Create a new webhook
@@ -126,8 +124,7 @@ module Pipedrive
     # @return [nil]
     def webhooks_post(subscription_url, event_action, event_object, opts = {})
       webhooks_post_with_http_info(subscription_url, event_action, event_object, opts)
-      return nil
-    end
+      end
 
     # Create a new webhook
     # Creates a new webhook and returns its details. Note that specifying an event which triggers the webhook combines 2 parameters - &#39;event_action&#39; and &#39;event_object&#39;. E.g., use &#39;\\*.\\*&#39; for getting notifications about all events, &#39;added.deal&#39; for any newly added deals, &#39;deleted.persons&#39; for any deleted persons, etc. See https://app.pipedrive.com/webhooks for more details.
@@ -175,8 +172,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -185,7 +182,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WebhooksApi#webhooks_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

@@ -16,7 +16,7 @@ module Pipedrive
   class OrganizationsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,7 +27,7 @@ module Pipedrive
     # @return [nil]
     def organizations_delete(ids, opts = {})
       organizations_delete_with_http_info(ids, opts)
-      return nil
+      
     end
 
     # Delete multiple organizations in bulk
@@ -58,8 +58,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +68,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Find organizations by name
@@ -80,7 +80,7 @@ module Pipedrive
     # @return [nil]
     def organizations_find_get(term, opts = {})
       organizations_find_get_with_http_info(term, opts)
-      return nil
+      
     end
 
     # Find organizations by name
@@ -115,8 +115,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -125,7 +125,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_find_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all organizations
@@ -140,7 +140,7 @@ module Pipedrive
     # @return [nil]
     def organizations_get(opts = {})
       organizations_get_with_http_info(opts)
-      return nil
+      
     end
 
     # Get all organizations
@@ -177,8 +177,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -187,7 +187,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List activities associated with an organization
@@ -201,7 +201,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_activities_get(id, opts = {})
       organizations_id_activities_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # List activities associated with an organization
@@ -239,8 +239,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -249,7 +249,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_activities_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List deals associated with an organization
@@ -264,7 +264,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_deals_get(id, opts = {})
       organizations_id_deals_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # List deals associated with an organization
@@ -304,8 +304,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -314,7 +314,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_deals_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete an organization
@@ -324,7 +324,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_delete(id, opts = {})
       organizations_id_delete_with_http_info(id, opts)
-      return nil
+      
     end
 
     # Delete an organization
@@ -354,8 +354,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -364,7 +364,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List files attached to an organization
@@ -378,7 +378,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_files_get(id, opts = {})
       organizations_id_files_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # List files attached to an organization
@@ -416,8 +416,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -426,7 +426,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_files_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List updates about an organization
@@ -438,7 +438,6 @@ module Pipedrive
     # @return [nil]
     def organizations_id_flow_get(id, opts = {})
       organizations_id_flow_get_with_http_info(id, opts)
-      return nil
     end
 
     # List updates about an organization
@@ -472,8 +471,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -482,7 +481,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_flow_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a follower from an organization
@@ -493,7 +492,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_followers_follower_id_delete(id, follower_id, opts = {})
       organizations_id_followers_follower_id_delete_with_http_info(id, follower_id, opts)
-      return nil
+      
     end
 
     # Delete a follower from an organization
@@ -528,8 +527,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -538,7 +537,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_followers_follower_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List followers of an organization
@@ -548,7 +547,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_followers_get(id, opts = {})
       organizations_id_followers_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # List followers of an organization
@@ -578,8 +577,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -588,7 +587,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_followers_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a follower to an organization
@@ -599,7 +598,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_followers_post(id, user_id, opts = {})
       organizations_id_followers_post_with_http_info(id, user_id, opts)
-      return nil
+      
     end
 
     # Add a follower to an organization
@@ -635,8 +634,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -645,7 +644,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_followers_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get details of an organization
@@ -655,7 +654,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_get(id, opts = {})
       organizations_id_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # Get details of an organization
@@ -685,8 +684,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -695,7 +694,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List mail messages associated with an organization
@@ -707,7 +706,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_mail_messages_get(id, opts = {})
       organizations_id_mail_messages_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # List mail messages associated with an organization
@@ -741,8 +740,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -751,7 +750,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_mail_messages_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Merge two organizations
@@ -762,7 +761,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_merge_put(id, merge_with_id, opts = {})
       organizations_id_merge_put_with_http_info(id, merge_with_id, opts)
-      return nil
+      
     end
 
     # Merge two organizations
@@ -798,8 +797,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -808,7 +807,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_merge_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List permitted users
@@ -819,7 +818,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_permitted_users_get(id, opts = {})
       organizations_id_permitted_users_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # List permitted users
@@ -851,8 +850,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -861,7 +860,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_permitted_users_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List persons of an organization
@@ -873,7 +872,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_persons_get(id, opts = {})
       organizations_id_persons_get_with_http_info(id, opts)
-      return nil
+      
     end
 
     # List persons of an organization
@@ -907,8 +906,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -917,7 +916,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_persons_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update an organization
@@ -930,7 +929,7 @@ module Pipedrive
     # @return [nil]
     def organizations_id_put(id, opts = {})
       organizations_id_put_with_http_info(id, opts)
-      return nil
+      
     end
 
     # Update an organization
@@ -966,8 +965,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -976,7 +975,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add an organization
@@ -989,7 +988,7 @@ module Pipedrive
     # @return [nil]
     def organizations_post(name, opts = {})
       organizations_post_with_http_info(name, opts)
-      return nil
+      
     end
 
     # Add an organization
@@ -1026,8 +1025,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1036,7 +1035,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganizationsApi#organizations_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

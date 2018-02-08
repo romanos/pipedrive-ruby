@@ -16,7 +16,7 @@ module Pipedrive
   class MailMessagesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -28,8 +28,7 @@ module Pipedrive
     # @return [nil]
     def mailbox_mail_messages_id_get(id, opts = {})
       mailbox_mail_messages_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one mail message
     # Returns data about specific mail message.
@@ -60,8 +59,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -70,7 +69,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MailMessagesApi#mailbox_mail_messages_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

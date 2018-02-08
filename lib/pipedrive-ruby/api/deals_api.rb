@@ -16,7 +16,7 @@ module Pipedrive
   class DealsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -27,8 +27,7 @@ module Pipedrive
     # @return [nil]
     def deals_delete(ids, opts = {})
       deals_delete_with_http_info(ids, opts)
-      return nil
-    end
+      end
 
     # Delete multiple deals in bulk
     # Marks multiple deals as deleted.
@@ -58,8 +57,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -68,7 +67,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Find deals by name
@@ -80,8 +79,7 @@ module Pipedrive
     # @return [nil]
     def deals_find_get(term, opts = {})
       deals_find_get_with_http_info(term, opts)
-      return nil
-    end
+      end
 
     # Find deals by name
     # Searches all deals by their title.
@@ -115,8 +113,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -125,7 +123,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_find_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get all deals
@@ -142,8 +140,7 @@ module Pipedrive
     # @return [nil]
     def deals_get(opts = {})
       deals_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all deals
     # Returns all deals
@@ -183,8 +180,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -193,7 +190,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List activities associated with a deal
@@ -207,8 +204,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_activities_get(id, opts = {})
       deals_id_activities_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List activities associated with a deal
     # Lists activities associated with a deal.
@@ -245,8 +241,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -255,7 +251,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_activities_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a deal
@@ -265,8 +261,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_delete(id, opts = {})
       deals_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a deal
     # Marks a deal as deleted.
@@ -295,8 +290,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -305,7 +300,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Duplicate deal
@@ -315,8 +310,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_duplicate_post(id, opts = {})
       deals_id_duplicate_post_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Duplicate deal
     # Duplicate a deal
@@ -345,8 +339,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -355,7 +349,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_duplicate_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List files attached to a deal
@@ -369,8 +363,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_files_get(id, opts = {})
       deals_id_files_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List files attached to a deal
     # Lists files associated with a deal.
@@ -407,8 +400,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -417,7 +410,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_files_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List updates about a deal
@@ -429,8 +422,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_flow_get(id, opts = {})
       deals_id_flow_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List updates about a deal
     # Lists updates about a deal.
@@ -463,8 +455,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -473,7 +465,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_flow_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a follower from a deal
@@ -484,8 +476,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_followers_follower_id_delete(id, follower_id, opts = {})
       deals_id_followers_follower_id_delete_with_http_info(id, follower_id, opts)
-      return nil
-    end
+      end
 
     # Delete a follower from a deal
     # Deletes a follower from a deal.
@@ -519,8 +510,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -529,7 +520,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_followers_follower_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List followers of a deal
@@ -539,8 +530,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_followers_get(id, opts = {})
       deals_id_followers_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List followers of a deal
     # Lists the followers of a deal.
@@ -569,8 +559,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -579,7 +569,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_followers_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a follower to a deal
@@ -590,8 +580,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_followers_post(id, user_id, opts = {})
       deals_id_followers_post_with_http_info(id, user_id, opts)
-      return nil
-    end
+      end
 
     # Add a follower to a deal
     # Adds a follower to a deal.
@@ -626,8 +615,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -636,7 +625,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_followers_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get details of a deal
@@ -646,8 +635,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_get(id, opts = {})
       deals_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get details of a deal
     # Returns details of a specific deal. Note that this also returns some additional fields which are not present when asking for all deals – such as deal age and stay in pipeline stages. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the &#39;key&#39; value of dealFields.
@@ -676,8 +664,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -686,7 +674,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List mail messages associated with a deal
@@ -698,8 +686,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_mail_messages_get(id, opts = {})
       deals_id_mail_messages_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List mail messages associated with a deal
     # Lists mail messages associated with a deal.
@@ -732,8 +719,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -742,7 +729,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_mail_messages_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Merge two deals
@@ -753,8 +740,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_merge_put(id, merge_with_id, opts = {})
       deals_id_merge_put_with_http_info(id, merge_with_id, opts)
-      return nil
-    end
+      end
 
     # Merge two deals
     # Merges a deal with another deal.
@@ -789,8 +775,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -799,7 +785,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_merge_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a participant from a deal
@@ -810,8 +796,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_participants_deal_participant_id_delete(id, deal_participant_id, opts = {})
       deals_id_participants_deal_participant_id_delete_with_http_info(id, deal_participant_id, opts)
-      return nil
-    end
+      end
 
     # Delete a participant from a deal
     # Deletes a participant from a deal.
@@ -845,8 +830,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -855,7 +840,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_participants_deal_participant_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List participants of a deal
@@ -867,8 +852,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_participants_get(id, opts = {})
       deals_id_participants_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List participants of a deal
     # Lists participants associated with a deal.
@@ -901,8 +885,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -911,7 +895,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_participants_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a participant to a deal
@@ -922,8 +906,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_participants_post(id, person_id, opts = {})
       deals_id_participants_post_with_http_info(id, person_id, opts)
-      return nil
-    end
+      end
 
     # Add a participant to a deal
     # Adds a participant to a deal.
@@ -958,8 +941,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -968,7 +951,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_participants_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List permitted users
@@ -979,8 +962,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_permitted_users_get(id, opts = {})
       deals_id_permitted_users_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List permitted users
     # List users permitted to access a deal
@@ -1011,8 +993,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1021,7 +1003,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_permitted_users_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List all persons associated with a deal
@@ -1033,8 +1015,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_persons_get(id, opts = {})
       deals_id_persons_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List all persons associated with a deal
     # Lists all persons associated with a deal, regardless of whether the person is the primary contact of the deal, or added as a participant.
@@ -1067,8 +1048,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1077,7 +1058,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_persons_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update product attachment details of the deal-product (a product already attached to a deal)
@@ -1095,8 +1076,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_products_deal_product_id_put(id, deal_product_id, item_price, quantity, opts = {})
       deals_id_products_deal_product_id_put_with_http_info(id, deal_product_id, item_price, quantity, opts)
-      return nil
-    end
+      end
 
     # Update product attachment details of the deal-product (a product already attached to a deal)
     # Updates product attachment details.
@@ -1152,8 +1132,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1162,7 +1142,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_products_deal_product_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # List products attached to a deal
@@ -1175,8 +1155,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_products_get(id, opts = {})
       deals_id_products_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # List products attached to a deal
     # Lists products attached to a deal.
@@ -1211,8 +1190,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1221,7 +1200,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_products_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a product to the deal, eventually creating a new item called a deal-product.
@@ -1239,8 +1218,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_products_post(id, product_id, item_price, quantity, opts = {})
       deals_id_products_post_with_http_info(id, product_id, item_price, quantity, opts)
-      return nil
-    end
+      end
 
     # Add a product to the deal, eventually creating a new item called a deal-product.
     # Adds a product to the deal.
@@ -1297,8 +1275,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1307,7 +1285,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_products_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete an attached product from a deal
@@ -1318,8 +1296,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_products_product_attachment_id_delete(id, product_attachment_id, opts = {})
       deals_id_products_product_attachment_id_delete_with_http_info(id, product_attachment_id, opts)
-      return nil
-    end
+      end
 
     # Delete an attached product from a deal
     # Deletes a product attachment from a deal, using the product_attachment_id.
@@ -1353,8 +1330,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1363,7 +1340,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_products_product_attachment_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update a deal
@@ -1384,8 +1361,7 @@ module Pipedrive
     # @return [nil]
     def deals_id_put(id, opts = {})
       deals_id_put_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Update a deal
     # Updates the properties of a deal.
@@ -1436,8 +1412,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1446,7 +1422,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a deal
@@ -1467,8 +1443,7 @@ module Pipedrive
     # @return [nil]
     def deals_post(title, opts = {})
       deals_post_with_http_info(title, opts)
-      return nil
-    end
+      end
 
     # Add a deal
     # Adds a new deal. Note that you can supply additional custom fields along with the request that are not described here. These custom fields are different for each Pipedrive account and can be recognized by long hashes as keys. To determine which custom fields exists, fetch the dealFields and look for &#39;key&#39; values.
@@ -1520,8 +1495,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1530,7 +1505,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get deals timeline
@@ -1548,8 +1523,7 @@ module Pipedrive
     # @return [nil]
     def deals_timeline_get(start_date, interval, amount, field_key, opts = {})
       deals_timeline_get_with_http_info(start_date, interval, amount, field_key, opts)
-      return nil
-    end
+      end
 
     # Get deals timeline
     # Returns open and won deals, grouped by defined interval of time set in a date-type dealField (field_key) — e.g. when month is the chosen interval, and 3 months are asked starting from  January 1st, 2012, deals are returned grouped into 3 groups — January, February and March — based on the value of the given field_key.
@@ -1607,8 +1581,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1617,7 +1591,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DealsApi#deals_timeline_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

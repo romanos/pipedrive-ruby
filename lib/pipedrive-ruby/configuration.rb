@@ -129,11 +129,12 @@ module Pipedrive
 
     def initialize
       @scheme = 'https'
-      @host = 'api.pipedrive.com'
-      @base_path = '/v1'
+      @host = 'api-proxy.pipedrive.com'
+      @base_path = '/'
       @api_key = {}
       @api_key_prefix = {}
       @timeout = 0
+      @access_token = nil
       @client_side_validation = true
       @verify_ssl = true
       @verify_ssl_host = true
@@ -196,6 +197,13 @@ module Pipedrive
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
+        'access_token' => 
+          {
+            type: 'access_token',
+            in: 'header',
+            key: 'Authorization',
+            value: "Bearer #{ @access_token }"
+          },
         'api_key' =>
           {
             type: 'api_key',

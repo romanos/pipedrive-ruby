@@ -16,7 +16,7 @@ module Pipedrive
   class PushNotificationsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -26,8 +26,7 @@ module Pipedrive
     # @return [nil]
     def push_notifications_get(opts = {})
       push_notifications_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all subscriptions
     # Returns data about all subscriptions. This endpoint is deprecated, use &lt;a href&#x3D;\&quot;#!/Webhooks/get_webhooks\&quot;&gt;Get all webhooks&lt;/a&gt; endpoint instead.
@@ -51,8 +50,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -61,7 +60,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PushNotificationsApi#push_notifications_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete existing subscription
@@ -71,8 +70,7 @@ module Pipedrive
     # @return [nil]
     def push_notifications_id_delete(id, opts = {})
       push_notifications_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete existing subscription
     # Marks subscription as deleted. This endpoint is deprecated, use &lt;a href&#x3D;\&quot;#!/Webhooks/delete_webhooks_id\&quot;&gt;Delete existing webhook&lt;/a&gt; endpoint instead.
@@ -101,8 +99,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -111,7 +109,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PushNotificationsApi#push_notifications_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get details of a subscription
@@ -121,8 +119,7 @@ module Pipedrive
     # @return [nil]
     def push_notifications_id_get(id, opts = {})
       push_notifications_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get details of a subscription
     # Returns data about a specific subscription. This endpoint is deprecated and should not be used anymore.
@@ -151,8 +148,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -161,7 +158,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PushNotificationsApi#push_notifications_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Create new subscription
@@ -175,8 +172,7 @@ module Pipedrive
     # @return [nil]
     def push_notifications_post(subscription_url, event, opts = {})
       push_notifications_post_with_http_info(subscription_url, event, opts)
-      return nil
-    end
+      end
 
     # Create new subscription
     # Creates new subscription and returns details. This endpoint is deprecated, use &lt;a href&#x3D;\&quot;#!/Webhooks/post_webhooks\&quot;&gt;Create a new webhook&lt;/a&gt; endpoint instead.
@@ -218,8 +214,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -228,7 +224,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PushNotificationsApi#push_notifications_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

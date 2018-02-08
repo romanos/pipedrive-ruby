@@ -16,7 +16,7 @@ module Pipedrive
   class NotesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -38,8 +38,7 @@ module Pipedrive
     # @return [nil]
     def notes_get(opts = {})
       notes_get_with_http_info(opts)
-      return nil
-    end
+      end
 
     # Get all notes
     # Returns all notes
@@ -87,8 +86,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -97,7 +96,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NotesApi#notes_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Delete a note
@@ -107,8 +106,7 @@ module Pipedrive
     # @return [nil]
     def notes_id_delete(id, opts = {})
       notes_id_delete_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Delete a note
     # Deletes a specific note.
@@ -137,8 +135,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -147,7 +145,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NotesApi#notes_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Get one note
@@ -157,8 +155,7 @@ module Pipedrive
     # @return [nil]
     def notes_id_get(id, opts = {})
       notes_id_get_with_http_info(id, opts)
-      return nil
-    end
+      end
 
     # Get one note
     # Returns details about a specific note.
@@ -187,8 +184,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -197,7 +194,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NotesApi#notes_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Update a note
@@ -214,8 +211,7 @@ module Pipedrive
     # @return [nil]
     def notes_id_put(id, content, opts = {})
       notes_id_put_with_http_info(id, content, opts)
-      return nil
-    end
+      end
 
     # Update a note
     # Updates a note
@@ -262,8 +258,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -272,7 +268,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NotesApi#notes_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
 
     # Add a note
@@ -288,8 +284,7 @@ module Pipedrive
     # @return [nil]
     def notes_post(content, opts = {})
       notes_post_with_http_info(content, opts)
-      return nil
-    end
+      end
 
     # Add a note
     # Adds a new note
@@ -331,8 +326,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -341,7 +336,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NotesApi#notes_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end

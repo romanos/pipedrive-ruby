@@ -16,7 +16,7 @@ module Pipedrive
   class AuthorizationsApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
+    def initialize(api_client = Client.default)
       @api_client = api_client
     end
 
@@ -28,8 +28,7 @@ module Pipedrive
     # @return [nil]
     def authorizations_post(email, password, opts = {})
       authorizations_post_with_http_info(email, password, opts)
-      return nil
-    end
+      end
 
     # Get all authorizations for a user
     # Returns all authorizations for a particular user. Authorization objects contain the API tokens the user has with different company accounts in Pipedrive. These can be fetched without an API token but using the email and password of the user.
@@ -65,8 +64,8 @@ module Pipedrive
 
       # http body (model)
       post_body = nil
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+      auth_names = [ 'access_token' ]
+      response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -75,7 +74,7 @@ module Pipedrive
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AuthorizationsApi#authorizations_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
-      return data, status_code, headers
+      return response
     end
   end
 end
