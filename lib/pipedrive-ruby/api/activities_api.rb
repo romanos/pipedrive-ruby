@@ -380,23 +380,25 @@ module Pipedrive
       form_params = {}
       form_params["subject"] = subject
       form_params["type"] = type
-      form_params["done"] = opts[:'done'] if !opts[:'done'].nil?
-      form_params["due_date"] = opts[:'due_date'] if !opts[:'due_date'].nil?
-      form_params["due_time"] = opts[:'due_time'] if !opts[:'due_time'].nil?
-      form_params["duration"] = opts[:'duration'] if !opts[:'duration'].nil?
-      form_params["user_id"] = opts[:'user_id'] if !opts[:'user_id'].nil?
-      form_params["deal_id"] = opts[:'deal_id'] if !opts[:'deal_id'].nil?
-      form_params["person_id"] = opts[:'person_id'] if !opts[:'person_id'].nil?
-      form_params["org_id"] = opts[:'org_id'] if !opts[:'org_id'].nil?
-      form_params["note"] = opts[:'note'] if !opts[:'note'].nil?
+      form_params["done"] = opts[:done] if !opts[:done].nil?
+      form_params["due_date"] = opts[:due_date] if !opts[:due_date].nil?
+      form_params["due_time"] = opts[:due_time] if !opts[:due_time].nil?
+      form_params["duration"] = opts[:duration] if !opts[:duration].nil?
+      form_params["user_id"] = opts[:user_id] if !opts[:user_id].nil?
+      form_params["deal_id"] = opts[:deal_id] if !opts[:deal_id].nil?
+      form_params["person_id"] = opts[:person_id] if !opts[:person_id].nil?
+      form_params["org_id"] = opts[:org_id] if !opts[:org_id].nil?
+      form_params["note"] = opts[:note] if !opts[:note].nil?
+      # form_params["participants"] = @api_client.object_to_http_body(opts[:participants]) if !opts[:participants].nil?
+      form_params["participants"] = opts[:participants] if !opts[:participants].nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'participants'])
+      post_body = form_params.to_json
       auth_names = [ 'access_token' ]
       response = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
-        :form_params => form_params,
+        :form_params => nil,
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
