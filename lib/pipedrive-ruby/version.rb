@@ -11,5 +11,5 @@ Swagger Codegen version: 2.3.1
 =end
 
 module Pipedrive
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 end
