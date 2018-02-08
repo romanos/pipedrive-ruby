@@ -39,4 +39,5 @@ build/
 .rvmrc
 
 # Swagger Config
+.swagger-codegen/
 config.json
